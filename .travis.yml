@@ -8,5 +8,8 @@ before_install:
   - sudo mv arduino-1.6.9 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
+install:
+  - arduino --install-library "OneWire, DallasTemperature, VirtualWire"
+
 script:
   - arduino --verify --board arduino:avr:pro sketch_tempdallas/sketch_tempdallas.ino
