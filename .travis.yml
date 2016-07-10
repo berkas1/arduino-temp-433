@@ -9,7 +9,10 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
-  - arduino --install-library "OneWire, DallasTemperature, VirtualWire"
+  - wget https://www.pjrc.com/teensy/arduino_libraries/VirtualWire.zip
+  - unzip VirtualWire.zip
+  - ln -s $PWD/VirtualWire /usr/local/share/arduino/libraries/VirtualWire
+  - arduino --install-library "OneWire, DallasTemperature"
 
 script:
   - arduino --verify --board arduino:avr:pro sketch_tempdallas/sketch_tempdallas.ino
