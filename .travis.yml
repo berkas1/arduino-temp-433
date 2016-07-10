@@ -15,4 +15,4 @@ install:
   - arduino --install-library "OneWire,DallasTemperature"
 
 script:
-  - arduino --verify --board arduino:avr:pro sketch_tempdallas/sketch_tempdallas.ino
+  - arduino --verify --board arduino:avr:uno sketch_tempdallas/sketch_tempdallas.ino
